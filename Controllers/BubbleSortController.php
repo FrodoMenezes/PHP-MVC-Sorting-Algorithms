@@ -1,34 +1,31 @@
 <?php
 
-    class BubbleSort {
+    class BubbleSortController {
 
         // Gives a 1-10 random numbers to the array
-        public function randomArr() {
-            for ($i = 0; $i<10; $i++) {
-                $numbers[]=rand(1,100);
+        public function randomArrayWithTenNumber() {
+            for ($i = 0; $i < 10; $i++) {
+                $randomArrayNumbers[] = rand(1,100);
             }
-            return $numbers;
+            
+            return $randomArrayNumbers;
         }
 
-        public function bubble_sort($numbers) {
+        public function bubble_sort($randomArray) {
             
-            for ($i = 0; $i<10; $i++) {
-                $numbers[]=rand(1,100);
-            }
-            
-            for ($counter = 0; $counter < count($numbers); $counter++) {
-                for ($num = 0; $num < count($numbers)-1; $num++) {
+            for ($counter = 0; $counter < count($randomArray); $counter++) {
+                for ($num = 0; $num < count($randomArray)-1; $num++) {
                     $length = $num + 1;
-                    $first = $numbers[$num];
+                    $first = $randomArray[$num];
 
-                    if ($numbers[$length] < $first) {
+                    if ($randomArray[$length] < $first) {
                         $temp = $first;
-                        $numbers[$num] = $numbers[$length];
-                        $numbers[$length] = $temp;
+                        $randomArray[$num] = $randomArray[$length];
+                        $randomArray[$length] = $temp;
                     }
                 }
             }
         
-            return $numbers;
+            return $randomArray;
         }
     }

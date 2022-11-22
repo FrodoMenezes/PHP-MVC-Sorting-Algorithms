@@ -1,8 +1,8 @@
 <?php 
 require_once(__DIR__ . '/../Controllers/BubbleSortController.php');
-$ClasseBBsort = new BubbleSort;
-$Random = $ClasseBBsort->randomArr();
-$Sorted = $ClasseBBsort->bubble_sort($Random);
+$classBubbleSort = new BubbleSortController;
+$randomArray = $classBubbleSort->randomArrayWithTenNumber();
+$arraySorted = $classBubbleSort->bubble_sort($randomArray);
 ?>
 
 <div>
@@ -12,12 +12,12 @@ $Sorted = $ClasseBBsort->bubble_sort($Random);
         <h3>Random array with 10 elements:</h3>
         <pre>
         <?php 
-            print_r($Random);
+            print_r($randomArray);
         ?>
         <hr>
         <h3>Same array, but now it's sorted!</h3>
         <?php 
-            print_r($Sorted);
+            print_r($arraySorted);
         ?>
 	</div>
 </div>
